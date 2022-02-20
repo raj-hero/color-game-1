@@ -1,0 +1,61 @@
+body{
+    z-index: 0;
+    margin: 0;
+    background-image: url(body.png);
+    background-size: cover;
+    background-repeat: repeat-x;
+}
+.jumbotron
+{
+    background: orange;
+    color: white;
+}
+.headU{
+    text-align: center;
+}
+h2{
+    font-size: 50px;
+}
+#numBar{
+    font-size: 80px;
+}
+
+#menuBar{
+    background-image: url(menu3.png);
+    background-size: cover;
+}
+#newColor{
+    background: orange;
+    margin-left: auto;
+}
+button{
+    transition: all 0.2s;
+}
+/* .hard{
+    background: orange;
+    color: white;
+} */
+/* .easy{
+    color: rgb(203, 192, 192);
+} */
+#statusS{
+    /* display: inline-block; */
+    text-align: center;
+}
+.girdy{
+    align-items: center;
+    background: red;
+    /* padding: 10vh; */
+    display: grid;
+    border-radius: 15px;
+    padding-bottom: 25%;
+    margin: auto;
+    /* transition: all 0.4s; */
+}
+
+.invisiblity {
+	visibility: hidden;
+}
+
+
+
