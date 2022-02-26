@@ -14,6 +14,7 @@ var textStatus = document.querySelector('.statusS');
 var bg = 'backgroundColor';
 var passingColor;
 var topp=document.querySelector('.jumbotron');
+// var toppChild=document.querySelector('#headm');
 // initilally by default hard mode
 var easy = false;
 textStatus.textContent = 'LET US PLAY !!'
@@ -54,7 +55,6 @@ function displayPass(ary) {
     for (var i = 0; i < ary.length; i++) {
         ary[i].style[bg] = passingColor;
     }
-    // header.style[bg] = passingColor;
     topp.style[bg]=passingColor;
 }
 // random filling of grids
@@ -94,6 +94,7 @@ function guessColor(ary) {
 }
 newColor.addEventListener('click', function () {
     fillColors(allGird);
+    topp.style[bg]="orange";
 });
 
 btnEasy.addEventListener('click', function () {
@@ -105,6 +106,7 @@ btnEasy.addEventListener('click', function () {
     btnHard.style[bg]="#fafafa";
     btnHard.style.color="orange";
     fillColors(allGird);
+    topp.style[bg]="orange";
 });
 
 btnHard.addEventListener('click', function () {
@@ -116,6 +118,7 @@ btnHard.addEventListener('click', function () {
     btnEasy.style[bg]="#fafafa";
     btnEasy.style.color="orange";
     fillColors(allGird);
+    topp.style[bg]="orange";
 });
 
 // add colors initially
