@@ -13,14 +13,16 @@ var rgby = document.querySelector('#numBar');
 var textStatus = document.querySelector('.statusS');
 var bg = 'backgroundColor';
 var passingColor;
+var topp=document.querySelector('.jumbotron');
 // initilally by default hard mode
 var easy = false;
 textStatus.textContent = 'LET US PLAY !!'
 
-btnHard.style.background="orange";
+btnHard.style[bg]="orange";
 btnHard.style.color="#fafafa";
 btnEasy.style.color="orange";
-btnEasy.style.background="#fafafa";
+btnEasy.style[bg]="#fafafa";
+topp.style[bg]="orange";
 
 function randRGBVal() {
     return Math.floor(Math.random() * 256);
@@ -52,7 +54,8 @@ function displayPass(ary) {
     for (var i = 0; i < ary.length; i++) {
         ary[i].style[bg] = passingColor;
     }
-    header.style[bg] = passingColor;
+    // header.style[bg] = passingColor;
+    topp.style[bg]=passingColor;
 }
 // random filling of grids
 function fillColors(ary) {
@@ -78,7 +81,9 @@ function guessColor(ary) {
             if (this.style[bg] === passingColor) {
                 textStatus.textContent = 'Correct :)';
                 displayPass(ary);
-            } else {
+                head.style[bg]=passingColor;
+            } 
+            else {
                 //Make wrong DIV invisible until game won
                 this.classList.add("invisiblity");
                 whoosh.play();
@@ -95,9 +100,9 @@ btnEasy.addEventListener('click', function () {
     if (easy === false)
         difficulty.removeChild(hardRow);
     easy = true;
-    btnEasy.style.background="orange";
+    btnEasy.style[bg]="orange";
     btnEasy.style.color="#fafafa";
-    btnHard.style.background="#fafafa";
+    btnHard.style[bg]="#fafafa";
     btnHard.style.color="orange";
     fillColors(allGird);
 });
@@ -106,12 +111,14 @@ btnHard.addEventListener('click', function () {
     if (easy === true)
         difficulty.appendChild(hardRow);
     easy = false;
-    btnHard.style.background="orange";
+    btnHard.style[bg]="orange";
     btnHard.style.color="#fafafa";
-    btnEasy.style.background="#fafafa";
+    btnEasy.style[bg]="#fafafa";
     btnEasy.style.color="orange";
     fillColors(allGird);
 });
 
+// add colors initially
 fillColors(allGird);
+// to check pass or fail
 guessColor(allGird);
