@@ -4,6 +4,7 @@ body{
     background-image: url(body.png);
     background-size: cover;
     background-repeat: repeat-x;
+    padding-bottom: 60px;
 }
 .jumbotron
 {
